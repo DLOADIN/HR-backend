@@ -31,7 +31,7 @@ app = Flask(__name__)
 # Configure CORS to allow requests from your frontend
 CORS(app, resources={
     r"/api/*": {
-        "origins": ["http://localhost:3000", "http://localhost:5173", "http://localhost:8080", "http://localhost:8081", "http://localhost:8082", "http://localhost:8083", "http://localhost:8084"],
+        "origins": ["http://localhost:3000"],
         "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
         "allow_headers": ["Content-Type", "Authorization"]
     }
@@ -2466,4 +2466,4 @@ def convert_decimals(obj):
 
 if __name__ == '__main__':
     # Log the server startup
-    app.run(debug=True, port=5000)
+    app.run(host='localhost', debug=True, port=5000)
