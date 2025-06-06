@@ -28,6 +28,8 @@ STANDARD_PASSWORD = 'password123'
 STANDARD_PASSWORD_HASH = generate_password_hash(STANDARD_PASSWORD)
 
 app = Flask(__name__)
+app.config['ENV'] = 'production'
+app.config['DEBUG'] = False
 # Configure CORS to allow requests from your frontend
 CORS(app, resources={
     r"/api/*": {
